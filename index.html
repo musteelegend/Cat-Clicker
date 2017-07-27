@@ -1,68 +1,21 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-
-    <!-- <script type="text/javascript" src="js/bootstrap.min.js"></script> -->
-
-    <title>cat clicker</title>
+    <title>Cat Clicker</title>
+    <link type="text/css" href="css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-md-12">
-                <h1 class="title">Cat Clicker</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <ul id="cat-list"></ul>
+    <ul id="cat-list"></ul>
+    <div id="cat">
 
-            </div>
-            <div class="col-md-9">
-                <h2><span id="cat-name"></span></h2>
-                <br>
-                <img id="cat-img" alt="Adorable cats">
-                <br>
-                <h2><span id="cat-count"></span></h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <br>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 text-center">
-                <button id="admin-button" class="btn btn-primary">Admin</button>
-            </div>
-            <div class="col-md-9">
-                <form id="admin-form" class="hidden">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input id="name" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="imgSrc">Image Url</label>
-                        <input id="imgSrc" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="clickCount">Clicks</label>
-                        <input id="clickCount" class="form-control" type="number">
-                    </div>
-
-                    <input id="save" class="btn btn-success" value="Save">
-                    <input id="cancel" class="btn btn-danger" value="Cancel">
-                </form>
-            </div>
-        </div>
+        <h2 id="cat-name" data-bind="text: name"></h2>
+        <div id="cat-count" data-bind="text: clickCount"></div>
+        <img id="cat-img" src="" alt="cute cat" data-bind="click: incrementCounter, attr: {src: imageSrc}" >
 
     </div>
-    <script type="text/javascript" src="js/libs/jquery-1.11.2.js"></script>
+    <script src="js/libs/knockout-3.2.0.js"></script>
+    <script src="js/libs/jquery-1.11.2.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
